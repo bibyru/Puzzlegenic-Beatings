@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv4is0merp1qo"]
+
+[ext_resource type="Script" path="res://Scripts/FinishLevel.gd" id="1_x2cn4"]
+[ext_resource type="AudioStream" uid="uid://dvm2roc7p6pqv" path="res://Sauce/Sounds/InGamePuzzle-Complete.mp3" id="2_d5new"]
+
+[node name="FinishLevel" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_x2cn4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d5new")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

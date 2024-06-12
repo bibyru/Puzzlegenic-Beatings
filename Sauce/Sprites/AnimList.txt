@@ -1,0 +1,14 @@
+Pam (40x32):
+1 Idle
+2 Walk
+3 Hurt
+4 Parry
+5 Attack
+6 ParryAttack
+
+
+Thug (40x40):
+1 Idle
+2 Walk
+3 Hurt
+4 Attack

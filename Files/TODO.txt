@@ -1,0 +1,21 @@
+OPTION:
+	WORK IT IN ACTUAL BUILD
+
+
+COMPLETE SOUNDS:
+	Player Hurt
+	Player Died
+
+
+CUTSCENE:
+	Opening cutscene:
+		Pam finds puzzle bag in house
+		Pam opens and confused cuz no pic
+		Pam looks up puzzle name and goes to place
+		Pam gets bothered by thugs
+		Fight start
+	
+	Boss finish cutscene:
+		Pam phews
+		Pam takes a pic of place
+		"Now let's start the puzzle"
