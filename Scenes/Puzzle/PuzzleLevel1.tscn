@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvdx86dvd8iq0"]
+
+[ext_resource type="Texture2D" uid="uid://igoly2f4sdfv" path="res://Sauce/Sprites/Puzzle1/Puzzle-Level1-Border.png" id="2_ft0qq"]
+[ext_resource type="Theme" uid="uid://fjn5vqo0plgq" path="res://Scenes/Menu/MyTheme.tres" id="3_ytxkn"]
+[ext_resource type="Script" path="res://Scripts/PuzzleManager.gd" id="4_eacc0"]
+[ext_resource type="Texture2D" uid="uid://bbl4vj40fcjsu" path="res://Sauce/Sprites/Puzzle1/Puzzle-Level1.jpg" id="4_xjbsn"]
+[ext_resource type="PackedScene" uid="uid://dv4is0merp1qo" path="res://Scenes/FinishLevel.tscn" id="5_1rdrj"]
+[ext_resource type="Texture2D" uid="uid://pf17ggynwb55" path="res://Sauce/Sprites/UI-Thumbtack.png" id="5_mcqhs"]
+[ext_resource type="PackedScene" uid="uid://f5vhc88nt1mq" path="res://Scenes/Puzzle/PuzzleArea.tscn" id="6_gq8hd"]
+
+[node name="Puzzle" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ytxkn")
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -462.5
+offset_top = 17.0
+offset_right = 462.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Complete the puzzle with the picture!"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -91.0
+offset_top = -57.0
+offset_right = 1310.0
+offset_bottom = 751.0
+color = Color(0.960784, 0.952941, 0.929412, 1)
+
+[node name="PuzzlePic" type="Sprite2D" parent="."]
+position = Vector2(192, 183)
+rotation = 0.0349066
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("4_xjbsn")
+
+[node name="Thumbtack" type="Sprite2D" parent="PuzzlePic"]
+texture_filter = 1
+position = Vector2(-40.3987, -148.681)
+scale = Vector2(3.43887, 3.43887)
+texture = ExtResource("5_mcqhs")
+
+[node name="ThePuzzle" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("4_eacc0")
+
+[node name="FinishLevel" parent="ThePuzzle" instance=ExtResource("5_1rdrj")]
+
+[node name="Border" type="Sprite2D" parent="ThePuzzle"]
+z_index = 1
+position = Vector2(477.75, 210.083)
+scale = Vector2(0.983334, 0.876882)
+texture = ExtResource("2_ft0qq")
+
+[node name="Areas" type="Node2D" parent="ThePuzzle"]
+
+[node name="11" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(320.667, 126)
+
+[node name="12" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(396.667, 126)
+
+[node name="13" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(476.667, 126)
+
+[node name="14" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(554.667, 125.333)
+
+[node name="15" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(632.667, 126)
+
+[node name="21" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(319.333, 210)
+
+[node name="22" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(397.333, 210)
+
+[node name="23" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(478, 210)
+
+[node name="24" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(555.333, 210)
+
+[node name="25" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(632.667, 210)
+
+[node name="31" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(321.333, 298)
+
+[node name="32" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(396.667, 298)
+
+[node name="33" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(478, 298)
+
+[node name="34" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(555.333, 298)
+
+[node name="35" parent="ThePuzzle/Areas" instance=ExtResource("6_gq8hd")]
+position = Vector2(633.333, 298)
+
+[node name="Parent" type="Node2D" parent="ThePuzzle"]
+y_sort_enabled = true
+position = Vector2(42, 202)

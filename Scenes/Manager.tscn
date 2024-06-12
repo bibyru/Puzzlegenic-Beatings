@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba6ev7c2dvpqh"]
+
+[ext_resource type="Script" path="res://Scripts/Manager.gd" id="1_uo4om"]
+[ext_resource type="AudioStream" uid="uid://chf7g2gmgxec1" path="res://Sauce/Sounds/Music-Menu.mp3" id="2_7gki1"]
+[ext_resource type="AudioStream" uid="uid://deqdijknthuum" path="res://Sauce/Sounds/Music-Game.mp3" id="3_101f2"]
+
+[node name="Manager" type="Node"]
+process_mode = 3
+script = ExtResource("1_uo4om")
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7gki1")
+bus = &"Music"
+
+[node name="MusicGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_101f2")
+autoplay = true
+bus = &"Music"

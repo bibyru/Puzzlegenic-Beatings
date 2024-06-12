@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://js6bstjv7jx5"]
+
+[ext_resource type="Script" path="res://Scripts/JohnUI.gd" id="1_xvp3i"]
+[ext_resource type="Texture2D" uid="uid://bmswonumaesjj" path="res://Sauce/Sprites/UI-ProgressBar-Red.png" id="2_5rxol"]
+[ext_resource type="Texture2D" uid="uid://1y7uj0x3ijd5" path="res://Sauce/Sprites/UI-ProgressBar-Fill.png" id="4_gy8vh"]
+
+[node name="JOHNUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xvp3i")
+
+[node name="HealthTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Health" type="TextureProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -28.0
+offset_right = 8.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 0)
+step = 10.0
+value = 100.0
+rounded = true
+texture_under = ExtResource("2_5rxol")
+texture_progress = ExtResource("4_gy8vh")
+
+[connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]

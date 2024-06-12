@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5pohpd14i8bx"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/MyButton.gd" id="1_wwawa"]
+[ext_resource type="AudioStream" uid="uid://uk12eaqkw8qx" path="res://Sauce/Sounds/Menu-ButtonClick.mp3" id="2_rv5wu"]
+
+[node name="MyButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+text = "WASD"
+script = ExtResource("1_wwawa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rv5wu")
+bus = &"Sound"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

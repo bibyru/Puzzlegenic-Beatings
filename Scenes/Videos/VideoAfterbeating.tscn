@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7owgxwuxbuj"]
+
+[ext_resource type="Theme" uid="uid://fjn5vqo0plgq" path="res://Scenes/Menu/MyTheme.tres" id="1_hdqoh"]
+[ext_resource type="Script" path="res://Scripts/VideoIntro.gd" id="2_8i5nc"]
+[ext_resource type="VideoStream" path="res://Sauce/Videos/Video-AfterBeating.ogv" id="3_re5cd"]
+
+[node name="VideoAfterbeating" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hdqoh")
+script = ExtResource("2_8i5nc")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.5
+offset_top = -239.5
+offset_right = 425.5
+offset_bottom = 239.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_re5cd")
+autoplay = true
+expand = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.5
+offset_top = -47.0
+offset_right = 202.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Press [ T ] to skip lore..."
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(581, 328)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

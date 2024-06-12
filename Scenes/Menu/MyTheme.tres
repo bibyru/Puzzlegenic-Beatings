@@ -1,0 +1,80 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://fjn5vqo0plgq"]
+
+[ext_resource type="FontFile" uid="uid://dv8oeunv6i75q" path="res://Scenes/Menu/UbuntuMono-B.ttf" id="1_d73au"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26ujf"]
+bg_color = Color(0.839216, 0.839216, 0.839216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chnfj"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_va3tq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13mmh"]
+bg_color = Color(0.960784, 0.952941, 0.929412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.168627)
+shadow_size = 10
+shadow_offset = Vector2(0, 5)
+
+[resource]
+default_font = ExtResource("1_d73au")
+default_font_size = 20
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.592157, 0.592157, 0.592157, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_26ujf")
+Button/styles/hover = SubResource("StyleBoxFlat_chnfj")
+Button/styles/normal = SubResource("StyleBoxFlat_va3tq")
+Button/styles/pressed = SubResource("StyleBoxFlat_26ujf")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_13mmh")
+VBoxContainer/constants/separation = 25

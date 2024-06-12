@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://fsyyb44dukas"]
+
+[ext_resource type="Script" path="res://Scripts/MenuPuzzleComplete.gd" id="1_y5tvy"]
+[ext_resource type="Theme" uid="uid://fjn5vqo0plgq" path="res://Scenes/Menu/MyTheme.tres" id="2_3p0vt"]
+[ext_resource type="PackedScene" uid="uid://c5pohpd14i8bx" path="res://Scenes/Menu/MyButton.tscn" id="3_vbwrv"]
+
+[node name="MenuPuzzleComplete" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_y5tvy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3p0vt")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -89.0
+offset_right = 210.5
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Close" parent="Control/Panel" instance=ExtResource("3_vbwrv")]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 50.0
+offset_bottom = 52.0
+text = "X"
+
+[node name="Finished" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -340.0
+offset_top = 11.0
+offset_right = -20.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Puzzle finished!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.5
+offset_top = -54.0
+offset_right = 128.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Quit" parent="Control/Panel/HBoxContainer" instance=ExtResource("3_vbwrv")]
+layout_mode = 2
+text = "Quit"
+
+[node name="Control" type="Control" parent="Control/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainMenu" parent="Control/Panel/HBoxContainer" instance=ExtResource("3_vbwrv")]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="Control/Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
