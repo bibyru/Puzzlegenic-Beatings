@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 @onready var JohnUI = $JOHNUI
 
+@onready var SoundDied = $SOUNDS/Died
 @onready var SoundHurt = $SOUNDS/Hurt
 @onready var SoundAttacked = $SOUNDS/Attacked
 @onready var SoundAttackBlocked = $SOUNDS/AttackBlocked
@@ -32,18 +33,21 @@ func Hurt(theirdmg):
 		SoundAttackBlocked.play()
 		hp -= ( theirdmg /2 )
 	else:
-		SoundHurt.play()
 		hp -= theirdmg
+		if hp > 0:
+			SoundHurt.play()
 	
 	JohnUI.UpdateHealth(hp)
 	
 	if hp <= 0:
-		statemachine.travel("Die")
+		SoundDied.play()
+		
 		Manager.ReqMenuTryAgain()
 		set_collision_layer_value(2, false)
 		var thetween = create_tween()
 		thetween.tween_property(self, "modulate", Color(1,1,1,0), 2)
 		
+		StateBusy(10)
 	else:
 		StateBusy(2)
 
@@ -115,6 +119,9 @@ func StateBusy(num = 0):
 	elif num == 1:
 		statemachine.travel("Parry")
 	
+	elif num == 10:
+		statemachine.travel("Die")
+	
 	else:
 		statemachine.travel("Hurt")
 
@@ -157,6 +164,3 @@ func _physics_process(delta):
 	if Input.is_action_just_released("Parry"):
 		FinishAnim()
 		isBlocking = false
-	
-	if Input.is_action_just_pressed("Interact"):
-		print(Hitbox.bodynode)

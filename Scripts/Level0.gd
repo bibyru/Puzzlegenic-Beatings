@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready():
+	Manager.level = 0
 	$Control/BG/LevelSelect.visible = false
 
 func _on_start_pressed():
@@ -18,7 +19,5 @@ func _on_practice_pressed():
 	get_tree().change_scene_to_file("res://Scenes/LevelPractice.tscn")
 
 func _on_level_1_pressed():
+	Manager.level += 1
 	get_tree().change_scene_to_file("res://Scenes/Videos/VideoIntro.tscn")
-
-func _on_level_2_pressed():
-	pass # Replace with function body.

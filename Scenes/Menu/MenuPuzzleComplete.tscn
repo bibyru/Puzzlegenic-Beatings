@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fsyyb44dukas"]
+[gd_scene load_steps=5 format=3 uid="uid://fsyyb44dukas"]
 
 [ext_resource type="Script" path="res://Scripts/MenuPuzzleComplete.gd" id="1_y5tvy"]
 [ext_resource type="Theme" uid="uid://fjn5vqo0plgq" path="res://Scenes/Menu/MyTheme.tres" id="2_3p0vt"]
 [ext_resource type="PackedScene" uid="uid://c5pohpd14i8bx" path="res://Scenes/Menu/MyButton.tscn" id="3_vbwrv"]
+[ext_resource type="FontFile" uid="uid://d08likpshn5qf" path="res://Scenes/Menu/Ubuntu-B.ttf" id="4_m0iiy"]
 
 [node name="MenuPuzzleComplete" type="CanvasLayer"]
 process_mode = 3
@@ -24,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -210.5
-offset_top = -89.0
-offset_right = 210.5
-offset_bottom = 38.0
+offset_left = -279.5
+offset_top = -220.5
+offset_right = 279.5
+offset_bottom = 220.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,17 +42,19 @@ text = "X"
 
 [node name="Finished" type="Label" parent="Control/Panel"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -340.0
-offset_top = 11.0
-offset_right = -20.0
-offset_bottom = 55.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 40
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 13.0
+offset_right = 160.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_m0iiy")
+theme_override_font_sizes/font_size = 30
 text = "Puzzle finished!"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
 layout_mode = 1
@@ -78,6 +81,20 @@ size_flags_horizontal = 3
 [node name="MainMenu" parent="Control/Panel/HBoxContainer" instance=ExtResource("3_vbwrv")]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -165.0
+offset_top = 82.0
+offset_right = 165.0
+offset_bottom = 342.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_m0iiy")
+text = "Wasd"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Control/Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Control/Panel/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

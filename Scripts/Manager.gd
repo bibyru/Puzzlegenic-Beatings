@@ -28,6 +28,9 @@ func PlayMusicGame():
 func _input(event):
 	if event.is_action_pressed("Esc"):
 		ReqOptions()
+	
+	if event.is_action_pressed("Interact"):
+		print(level)
 
 
 
