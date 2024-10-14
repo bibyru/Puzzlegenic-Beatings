@@ -56,5 +56,7 @@ func FinishLevelFinished():
 
 func _physics_process(delta):
 	if OnMe != null:
+		print(OnMe)
 		if Input.is_action_pressed("Attack"):
+			print("Buh")
 			OnMe.global_position = get_global_mouse_position()

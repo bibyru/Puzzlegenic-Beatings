@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://csrayo6l2x6cb"]
+[gd_scene load_steps=10 format=3 uid="uid://csrayo6l2x6cb"]
 
 [ext_resource type="PackedScene" uid="uid://de87owwi01ddr" path="res://Scenes/InGame/TilesFloor.tscn" id="1_b1cld"]
 [ext_resource type="PackedScene" uid="uid://dvsgbsy8f6o2h" path="res://Scenes/InGame/PanningCam.tscn" id="2_2kw3b"]
 [ext_resource type="PackedScene" uid="uid://b7qs5p0n45xo0" path="res://Scenes/InGame/CharThug.tscn" id="3_74vj5"]
 [ext_resource type="Texture2D" uid="uid://bg5j42s8wxoqj" path="res://Sauce/Sprites/BG-GedungFatahillah-1.png" id="3_ismpm"]
 [ext_resource type="PackedScene" uid="uid://bs4kkobveuq3v" path="res://Scenes/InGame/CharPam.tscn" id="4_3kpei"]
+[ext_resource type="Texture2D" uid="uid://8ki5bqj3y5sp" path="res://Sauce/Sprites/BG-Sky.png" id="4_58th3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4m1ff"]
 size = Vector2(20, 120)
@@ -28,24 +29,33 @@ position = Vector2(-319, -6)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -63.0
+offset_right = 154.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_58th3")
+expand_mode = 2
+stretch_mode = 1
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="Bg" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(38, 9)
-scale = Vector2(3, 3)
+position = Vector2(117, -16)
 texture = ExtResource("3_ismpm")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer2"]
-z_index = -10
-offset_left = -473.0
-offset_top = -89.0
-offset_right = 185.0
-offset_bottom = 53.0
-color = Color(0.721569, 0.968627, 1, 1)
 
 [node name="LevelLimits" type="StaticBody2D" parent="."]
 position = Vector2(-415, 0)
